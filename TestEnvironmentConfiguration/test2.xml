@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<environment name="test2">
+  <Name value="A1QA2" />
+  <AlertText value ="Please fill in the required field" />
+</environment>

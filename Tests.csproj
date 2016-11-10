@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7617B06-3B70-42CA-A59A-511F9AD929A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutomatedTests</RootNamespace>
+    <AssemblyName>AutomatedTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>True</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebDriver">
+      <HintPath>packages\Selenium.WebDriver.2.48.1\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>packages\Selenium.Support.2.48.1\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WebdriverFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\WebdriverFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Forms\CarReviewForm.cs" />
+    <Compile Include="Forms\CompareForm.cs" />
+    <Compile Include="Forms\DescribeCarForm.cs" />
+    <Compile Include="Forms\MainForm.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Menus\TopMenu.cs" />
+    <Compile Include="Models\ExampleMessageModel.cs" />
+    <Compile Include="Models\ExampleUserModel.cs" />
+    <Compile Include="TestDataReader.cs" />
+    <Compile Include="TestEnvironment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\TC_01_Cars.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Reporter\Images\dotnetfx_cleanup_tool.zip" />
+    <None Include="Reporter\Images\Thumbs.db" />
+    <None Include="Reporter\MSTestResultViewer.Consol.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\WebdriverFramework.dll" />
+    <Content Include="nuget.exe" />
+    <Content Include="Reporter\Chart.htm" />
+    <Content Include="Reporter\Images\ActionChart.png" />
+    <Content Include="Reporter\Images\ActionDonate.png" />
+    <Content Include="Reporter\Images\ActionErrorWindow.png" />
+    <Content Include="Reporter\Images\ActionHelp.png" />
+    <Content Include="Reporter\Images\ActionHierarchyWindow.png" />
+    <Content Include="Reporter\Images\ActionLicense.png" />
+    <Content Include="Reporter\Images\ActionPrint.png" />
+    <Content Include="Reporter\Images\ActionTable.png" />
+    <Content Include="Reporter\Images\bg.png" />
+    <Content Include="Reporter\Images\button_a_bg.gif" />
+    <Content Include="Reporter\Images\button_plain_hover.png" />
+    <Content Include="Reporter\Images\button_span_bg.gif" />
+    <Content Include="Reporter\Images\Class.png" />
+    <Content Include="Reporter\Images\datagrid_header_bg.gif" />
+    <Content Include="Reporter\Images\dotnetfx_cleanup_tool\cleanup_tool.exe" />
+    <Content Include="Reporter\Images\dotnetfx_cleanup_tool\history.txt" />
+    <Content Include="Reporter\Images\dotnetfx_cleanup_tool\readme.txt" />
+    <Content Include="Reporter\Images\logo.png" />
+    <Content Include="Reporter\Images\Logs.png" />
+    <Content Include="Reporter\Images\Method.png" />
+    <Content Include="Reporter\Images\MSTestResultViewer.ico" />
+    <Content Include="Reporter\Images\MSTestResultViewer.png" />
+    <Content Include="Reporter\Images\MSTestResultViewerUninstaller.ico" />
+    <Content Include="Reporter\Images\Namespace.png" />
+    <Content Include="Reporter\Images\Project.png" />
+    <Content Include="Reporter\Images\StatusFailed.png" />
+    <Content Include="Reporter\Images\StatusIngnored.png" />
+    <Content Include="Reporter\Images\StatusPassed.png" />
+    <Content Include="Reporter\Images\TreeviewHierarchy.gif" />
+    <Content Include="Reporter\Images\TreeviewHierarchyLine.gif" />
+    <Content Include="Reporter\Index.htm" />
+    <Content Include="Reporter\Javascripts\grid.js" />
+    <Content Include="Reporter\Javascripts\imagesize.js" />
+    <Content Include="Reporter\Javascripts\jquery.magnifier.js" />
+    <Content Include="Reporter\Javascripts\jquery.min.js" />
+    <Content Include="Reporter\Javascripts\jquery.treeview.js" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.accordion.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.all.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.base.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.button.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.core.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.datepicker.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.dialog.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.progressbar.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.resizable.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.selectable.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.slider.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.tabs.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\base\jquery.ui.theme.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.accordion.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.all.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.autocomplete.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.base.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.button.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.core.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.datepicker.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.dialog.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.progressbar.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.resizable.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.selectable.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.slider.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.tabs.css" />
+    <Content Include="Reporter\Javascripts\jqueryThemes\cupertino\jquery.ui.theme.css" />
+    <Content Include="Reporter\Javascripts\jquery_002.js" />
+    <Content Include="Reporter\Javascripts\magnify.cur" />
+    <Content Include="Reporter\Library\layout.jquery\jquery-latest.js" />
+    <Content Include="Reporter\Library\layout.jquery\jquery-ui-latest.js" />
+    <Content Include="Reporter\Library\layout.jquery\jquery.layout-latest.js" />
+    <Content Include="Reporter\Library\layout.jquery\layout-default-latest.css" />
+    <Content Include="Reporter\License.htm" />
+    <Content Include="Reporter\MSTestResultViewer.Consol.exe" />
+    <Content Include="Reporter\MSTestResultViewer.Consol.pdb" />
+    <Content Include="Reporter\MSTestResultViewer.Consol.vshost.exe" />
+    <Content Include="Reporter\mstest_index.html" />
+    <Content Include="Reporter\overview.html" />
+    <Content Include="Reporter\RGraph\excanvas\excanvas.js" />
+    <Content Include="Reporter\RGraph\libraries\RGraph.bar.js" />
+    <Content Include="Reporter\RGraph\libraries\RGraph.common.core.js" />
+    <Content Include="Reporter\RGraph\libraries\RGraph.common.dynamic.js" />
+    <Content Include="Reporter\RGraph\libraries\RGraph.common.effects.js" />
+    <Content Include="Reporter\RGraph\libraries\RGraph.common.key.js" />
+    <Content Include="Reporter\RGraph\libraries\RGraph.common.tooltips.js" />
+    <Content Include="Reporter\RGraph\libraries\RGraph.pie.js" />
+    <Content Include="Reporter\Styles\contentpage.css" />
+    <Content Include="Reporter\Styles\default.css" />
+    <Content Include="Reporter\Styles\imagesize.css" />
+    <Content Include="Reporter\Styles\jquery.treeview.css" />
+    <Content Include="Reporter\Styles\ui.jqgrid.css" />
+    <Content Include="Reporter\suites.html" />
+    <Content Include="Reporter\TestcaseHierarchy.htm" />
+    <Content Include="Resources\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IEDriverServer.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SoapRequest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestEnvironmentConfiguration\test2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestEnvironmentConfiguration\test.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Stores\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.-->
+  <Target Name="BeforeBuild">
+    <Exec Command="nuget.exe install packages.config -o .\packages" />
+  </Target>
+  <Target Name="AfterBuild">
+    <Exec Command="for %%x in (.\TestEnvironmentConfiguration\*) do @copy %%x $(TargetDir)" />
+    <Exec Command="for %%x in (.\Resources\*) do @copy %%x $(TargetDir)" />
+  </Target>
+</Project>
